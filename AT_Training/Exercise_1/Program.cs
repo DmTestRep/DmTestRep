@@ -1,38 +1,26 @@
 ﻿using System;
 
-namespace AT_Training
+namespace Exercise_1
 {
     class Program
     {
         static void Main(string[] args)
         {
-            int a = 0;
-            int b = 0;
-            bool repeat = true;
-            while (repeat)
-            {
-                do
-                {
-                    Console.Write("A = ");
-                }
-                while (!int.TryParse(Console.ReadLine(), out a));
-                do
-                {
-                    Console.Write("B = ");
-                }
-                while (!int.TryParse(Console.ReadLine(), out b));
-                if (a <= 0 || b <= 0)
-                {
-                    Console.WriteLine("Ошибка, попробовать еще раз? Y/N");
-                    var ki = Console.ReadKey(true);
-                    if (ki.Key != ConsoleKey.Y)
-                        repeat = false;
-                    continue;
-                }
-                Console.WriteLine("A: {0}, B: {1}, SSSS: {2}", a, b, a * b);
-                repeat = false;
-                Console.ReadKey();
-            }
+            Console.Write("X: ");
+            double X_value = Convert.ToDouble(Console.ReadLine());
+            Console.Write("Y: ");
+            double Y_value = Convert.ToDouble(Console.ReadLine());
+            Console.Write("Z: ");
+            double Z_value = Convert.ToDouble(Console.ReadLine());
+
+            double Case1 = (X_value + Y_value) * (Math.Pow(Z_value, 2) + 1);
+            double Case2 = (X_value % Z_value - 1) * Math.Sqrt(Y_value);
+            double Case3 = (X_value * Y_value + Y_value * Z_value) / Math.Pow(Z_value, 3);
+
+            Console.WriteLine("Case1: {0}", Case1);
+            Console.WriteLine("Case2: {0}", Case2);
+            Console.WriteLine("Case3: {0}", Case3);
+            Console.ReadLine();
         }
     }
 }
